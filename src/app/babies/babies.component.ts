@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Baby } from '../baby';
 
 @Component({
   selector: 'app-babies',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./babies.component.scss']
 })
 export class BabiesComponent implements OnInit {
+
+  babies: Baby[] = [
+    new Baby('Lola'),
+    new Baby('Manuel')
+  ];
 
   constructor() { }
 
