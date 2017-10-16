@@ -21,6 +21,7 @@ import { BabiesComponent } from './babies/babies.component';
 import { BabyComponent } from './baby/baby.component';
 import { BabyStatusComponent } from './baby-status/baby-status.component';
 import { StatusIndicatorComponent } from './status-indicator/status-indicator.component';
+import { BabyCareComponent } from './baby-care/baby-care.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { StatusIndicatorComponent } from './status-indicator/status-indicator.co
     BabiesComponent,
     BabyComponent,
     BabyStatusComponent,
-    StatusIndicatorComponent
+    StatusIndicatorComponent,
+    BabyCareComponent
   ],
   imports: [
     BrowserModule,
