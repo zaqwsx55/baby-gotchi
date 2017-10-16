@@ -11,7 +11,7 @@ const routes: Routes = [
       path: '',
       component: BabiesComponent
     }, {
-      path: ':id',
+      path: ':id/care',
       component: BabyComponent,
       pathMatch: 'prefix'
     }]
