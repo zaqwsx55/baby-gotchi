@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BabiesComponent } from './babies/babies.component';
 import { BabyComponent } from './baby/baby.component';
+import { BabyCareComponent } from './baby-care/baby-care.component';
 
 const routes: Routes = [
   {
@@ -11,10 +12,18 @@ const routes: Routes = [
       path: '',
       component: BabiesComponent
     }, {
-      path: ':id/care',
+      path: ':id',
       component: BabyComponent,
-      pathMatch: 'prefix'
+      children: [{
+        path: 'care',
+        component: BabyCareComponent
+      }]
     }]
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'babies'
   },
   {
     path: '**',
