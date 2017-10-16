@@ -1,3 +1,12 @@
-<app-baby-status [baby]="baby | async"></app-baby-status>
+<section fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="12px">
+    <mat-card *ngIf="baby | async; let baby; else loading">
+        <mat-card-title>Baby Status</mat-card-title>
+        <mat-card-content>
+            <app-baby-status [baby]="baby"></app-baby-status>
+        </mat-card-content>
+    </mat-card>
+    <ng-template #loading>Loading Baby Data...</ng-template>
 
-<!-- take care actions -->
+    <!-- inject Baby Care or Baby Control Room components -->
+    <router-outlet></router-outlet>
+</section>
