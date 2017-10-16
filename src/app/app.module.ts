@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 /* Material Design and Flex Layout */
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatCardModule, MatButtonModule } from '@angular/material';
+import { MatToolbarModule, MatCardModule, MatButtonModule, MatProgressBarModule } from '@angular/material';
 
 /* Angular Fire */
 import { AngularFireModule } from 'angularfire2';
@@ -18,7 +18,7 @@ import { RandomPickerService } from './random-picker.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BabiesComponent } from './babies/babies.component';
-import { BabyComponentComponent } from './baby-component/baby-component.component';
+import { BabyComponent } from './baby/baby.component';
 import { BabyStatusComponent } from './baby-status/baby-status.component';
 import { StatusIndicatorComponent } from './status-indicator/status-indicator.component';
 
@@ -26,7 +26,7 @@ import { StatusIndicatorComponent } from './status-indicator/status-indicator.co
   declarations: [
     AppComponent,
     BabiesComponent,
-    BabyComponentComponent,
+    BabyComponent,
     BabyStatusComponent,
     StatusIndicatorComponent
   ],
@@ -36,6 +36,7 @@ import { StatusIndicatorComponent } from './status-indicator/status-indicator.co
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    MatProgressBarModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),

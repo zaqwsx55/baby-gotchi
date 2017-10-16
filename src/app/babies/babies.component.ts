@@ -12,21 +12,39 @@ import { RandomPickerService } from 'app/random-picker.service';
 })
 export class BabiesComponent implements OnInit {
 
-  // babies: AngularFireList<Baby>;
+  babiesRef: AngularFireList<Baby>;
   babies: Observable<Baby[]>;
 
   constructor(private db: AngularFireDatabase,
               private randomService: RandomPickerService) { }
 
   ngOnInit() {
-    /** TODO
-     * to jest do sprawdzenia
-     */
-    // this.babies = this.db.list('babies').snapshotChanges();
-    // this.babies = this.db.list('/babies');
-    const itemsRef: AngularFireList<Baby> = this.db.list('babies');
-    this.babies = itemsRef.valueChanges();
+    this.babiesRef = this.db.list('babies');
+    this.babies = this.babiesRef.snapshotChanges().map(
+      actions => {
+        return actions.map(a => ({key: a.payload.key, ...a.payload.val()}));
+      }
+    )
   }
+
+  /**
+   * Firebase Demo Functions
+   */
+  // addItem(baby: Baby) {
+  //   this.babiesRef.push(baby);
+  // }
+  // updateItem(key: string, newBaby: Baby) {
+  //   this.babiesRef.update(key, newBaby);
+  // }
+  // deleteItem(key: string) {
+  //   this.babiesRef.remove(key);
+  // }
+  // deleteEveryhing() {
+  //   this.babiesRef.remove();
+  // }
+
+
+
 
   // create new baby
   giveBirth() {
@@ -36,7 +54,7 @@ export class BabiesComponent implements OnInit {
   }
 
   pickRandomName() {
-    const names = ['Carlos', 'Laura', 'John', 'Augustina', 'Manuel', 'Lola', 'Isaac', 
+    const names = ['Carlos', 'Laura', 'John', 'Augustina', 'Manuel', 'Lola', 'Isaac',
       'Georgina', 'Paolo', 'Maria', 'Ronaldo', 'Ronalda'];
     return this.randomService.pickAtRandom(names);
   }

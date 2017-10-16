@@ -5,8 +5,8 @@
   <mat-card *ngFor="let baby of babies | async">
     <mat-card-title>{{ baby.name }}</mat-card-title>
     <mat-card-actions>
-      <a mat-button color="primary" [routerLink]="[baby.$key, 'care']">Take care</a>
-      <a mat-button color="accent" [routerLink]="[baby.$key, 'control']">Control!!!</a>
+      <a mat-button color="primary" [routerLink]="[baby.key, 'care']">Take care</a>
+      <a mat-button color="accent" [routerLink]="[baby.key, 'control']">Control!!!</a>
     </mat-card-actions>
   </mat-card>
 
