@@ -1,10 +1,14 @@
-<h1>{{ baby.name }} is {{ baby.status }}</h1>
+<section *ngIf="baby">
 
-<div class="baby" [class.baby-sad]="baby.life < 50" [class.baby-super-sad]="baby.life < 25"></div>
+  <h1>{{ baby.name }} is {{ status }}</h1>
 
-<section fxLayout="column" fxLayoutGap="12px">
-  <app-status-indicator [label]="'Sleepiness'" [value]="baby.sleepiness"></app-status-indicator>
-  <app-status-indicator [label]="'Hunger'" [value]="baby.hunger" [color]="'accent'"></app-status-indicator>
-  <app-status-indicator [label]="'Shittiness'" [value]="baby.shittiness"></app-status-indicator>
-  <app-status-indicator class="life" [label]="'Life'" [value]="baby.life" [color]="'warn'"></app-status-indicator>
+  <div class="baby" [class.baby-sad]="baby.life < 50" [class.baby-super-sad]="baby.life < 25"></div>
+
+  <section fxLayout="column" fxLayoutGap="12px">
+    <app-status-indicator [label]="'Sleepiness'" [value]="baby.sleepiness"></app-status-indicator>
+    <app-status-indicator [label]="'Hunger'" [value]="baby.hunger" [color]="'accent'"></app-status-indicator>
+    <app-status-indicator [label]="'Shittiness'" [value]="baby.shittiness"></app-status-indicator>
+    <app-status-indicator class="life" [label]="'Life'" [value]="baby.life" [color]="'warn'"></app-status-indicator>
+  </section>
+
 </section>

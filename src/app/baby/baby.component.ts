@@ -20,42 +20,12 @@ export class BabyComponent implements OnInit {
               private db: AngularFireDatabase) { }
 
   ngOnInit() {
-
     this.activatedRoute.params.subscribe(
       p => {
         const key = p['id'];
-        console.log('Klucz: ' + key);
-
         this.baby = this.db.object('/babies/' + key).valueChanges();
-
-        console.log(this.baby);
-
-
-
-        // this.babyRef = this.db.object('/babies/{key}');
       }
     )
-
-    this.babyRef = this.db.object('/babies/{key}');
-
-    // console.log(this.babyRef);
-
-
-
-    // this.activatedRoute.params.subscribe(
-    //   p => {
-    //     const key = p['id'];
-    //     this.baby = this.db.object('/babies/{key}');
-    //   }
-    // )
-    // this.activatedRoute.params.subscribe(
-    //   p => {
-    //     const key = p['id'];
-    //     this.baby = this.db.object('/babies/${key}');
-    //   }
-    // )
-
-
   }
 
 }
