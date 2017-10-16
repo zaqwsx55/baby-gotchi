@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Baby } from '../baby';
 
 @Component({
   selector: 'app-baby-status',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BabyStatusComponent implements OnInit {
 
+  @Input() baby: Baby;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  get status(): string {
+    if (this.baby.life > 50) {
+      return 'happy';
+    } else if (this.baby.life > 25) {
+      return 'sad';
+    } else {
+      return 'very sad';
+    }
   }
 
 }

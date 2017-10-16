@@ -20,13 +20,15 @@ import { AppComponent } from './app.component';
 import { BabiesComponent } from './babies/babies.component';
 import { BabyComponentComponent } from './baby-component/baby-component.component';
 import { BabyStatusComponent } from './baby-status/baby-status.component';
+import { StatusIndicatorComponent } from './status-indicator/status-indicator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BabiesComponent,
     BabyComponentComponent,
-    BabyStatusComponent
+    BabyStatusComponent,
+    StatusIndicatorComponent
   ],
   imports: [
     BrowserModule,
