@@ -4,5 +4,15 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  // Firebase configuration
+  firebase: {
+    apiKey: 'AIzaSyDFL76YOusDceZYYRuEpjmtyNE3UmV4Ulc',
+    authDomain: 'baby-gotchi-dbca4.firebaseapp.com',
+    databaseURL: 'https://baby-gotchi-dbca4.firebaseio.com',
+    projectId: 'baby-gotchi-dbca4',
+    storageBucket: '',
+    messagingSenderId: '475056967084'
+  }
 };

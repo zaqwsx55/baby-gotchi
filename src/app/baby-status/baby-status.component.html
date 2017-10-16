@@ -1,0 +1,27 @@
+<h1>{{ baby.name }} is {{ baby.status }}</h1>
+
+<div class="baby" [class.baby-sad]="baby.life < 50" [class.baby-super-sad]="baby.life < 25"></div>
+
+<div fxLayout="row" fxLayoutAlign="start center" class="status-indicator">
+  <span fxFlex="60%">Sleepiness</span>
+  <mat-progress-bar fxFlex="25%" mode="determinate" [value]="baby.sleepiness" color="primary"></mat-progress-bar>
+  <span fxFlex="15%" class="status-indicator-couter">{{ baby.sleepiness }}</span>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="start center" class="status-indicator">
+  <span fxFlex="60%">Hunger</span>
+  <mat-progress-bar fxFlex="25%" mode="determinate" [value]="baby.hunger" color="primary"></mat-progress-bar>
+  <span fxFlex="15%" class="status-indicator-counter">{{ baby.hunger }}</span> 
+</div>
+
+<div class="status-indicator">
+  <span fxFlex="60%">Shittiness</span>
+  <mat-progress-bar fxFlex="25%" mode="determinate" [value]="baby.shittiness" color="accent"></mat-progress-bar>
+  <span fxFlex="15%" class="status-indicator-counter">{{ baby.shittiness }}</span> 
+</div>
+
+<div class="life status-indicator">
+  <span fxFlex="60%">Life</span>
+  <mat-progress-bar fxFlex="25%" mode="determinate" [value]="baby.life" color="warn"></mat-progress-bar>
+  <strong fxFlex="15%" class="status-indicator-counter">{{ baby.life }}</strong> 
+</div>
