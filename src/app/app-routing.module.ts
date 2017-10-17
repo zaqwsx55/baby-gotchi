@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BabiesComponent } from './babies/babies.component';
 import { BabyComponent } from './baby/baby.component';
 import { BabyCareComponent } from './baby-care/baby-care.component';
+import { BabyControlRoomComponent } from './baby-control-room/baby-control-room.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
       children: [{
         path: 'care',
         component: BabyCareComponent
+      }, {
+        path: 'control',
+        component: BabyControlRoomComponent
       }]
     }]
   },

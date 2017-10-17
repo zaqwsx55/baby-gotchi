@@ -22,6 +22,7 @@ import { BabyComponent } from './baby/baby.component';
 import { BabyStatusComponent } from './baby-status/baby-status.component';
 import { StatusIndicatorComponent } from './status-indicator/status-indicator.component';
 import { BabyCareComponent } from './baby-care/baby-care.component';
+import { BabyControlRoomComponent } from './baby-control-room/baby-control-room.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BabyCareComponent } from './baby-care/baby-care.component';
     BabyComponent,
     BabyStatusComponent,
     StatusIndicatorComponent,
-    BabyCareComponent
+    BabyCareComponent,
+    BabyControlRoomComponent
   ],
   imports: [
     BrowserModule,
