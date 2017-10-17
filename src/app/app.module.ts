@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 /* Material Design and Flex Layout */
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatCardModule, MatButtonModule, MatProgressBarModule } from '@angular/material';
+import { MatToolbarModule, MatCardModule, MatButtonModule, MatProgressBarModule, MatSnackBarModule } from '@angular/material';
 
 /* Angular Fire */
 import { AngularFireModule } from 'angularfire2';
@@ -41,6 +41,7 @@ import { BabyControlRoomComponent } from './baby-control-room/baby-control-room.
     MatCardModule,
     MatButtonModule,
     MatProgressBarModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),

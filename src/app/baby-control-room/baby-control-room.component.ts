@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { MatSnackBar } from '@angular/material';
 import { FirebaseApp } from 'angularfire2';
+
+import { RandomPickerService } from 'app/random-picker.service';
+
+const messages = ['You are evil!', 'I bow before you Dr Evil!', 'Satanaaaas!!', 'Keepin\' it real!', 'Wow that was mean!',
+                  'You have no shame!', 'OMG reaaaallllly?'];
 
 @Component({
   selector: 'app-baby-control-room',
@@ -13,7 +19,9 @@ export class BabyControlRoomComponent implements OnInit {
   babyId: string;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private firebaseApp: FirebaseApp) { }
+              private firebaseApp: FirebaseApp,
+              private matSnackBar: MatSnackBar,
+              private randomPicker: RandomPickerService) { }
 
   ngOnInit() {
     this.activatedRoute.parent.params.subscribe(
@@ -22,18 +30,25 @@ export class BabyControlRoomComponent implements OnInit {
   }
 
   babyHungry() {
+    this.showMessage();
     const statRef = this.firebaseApp.database().ref(`/babies/${this.babyId}/hunger`);
     statRef.transaction(stat => stat + 10);
   }
 
   babyShitty() {
+    this.showMessage();
     const statRef = this.firebaseApp.database().ref(`/babies/${this.babyId}/shittiness`);
     statRef.transaction(stat => stat + 10);
   }
 
   babySleepy() {
+    this.showMessage();
     const statRef = this.firebaseApp.database().ref(`/babies/${this.babyId}/sleepiness`);
     statRef.transaction(stat => stat + 10);
+  }
+
+  showMessage() {
+    this.matSnackBar.open(this.randomPicker.pickAtRandom(messages), null, {duration: 3000});
   }
 
 }
