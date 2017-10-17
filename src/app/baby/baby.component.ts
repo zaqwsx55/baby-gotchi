@@ -23,7 +23,7 @@ export class BabyComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       p => {
         const key = p['id'];
-        this.baby = this.db.object('/babies/' + key).valueChanges();
+        this.baby = this.db.object(`/babies/${key}`).valueChanges();
       }
     )
   }
